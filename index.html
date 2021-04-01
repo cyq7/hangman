@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/f58497a0c9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="decoration1"></div>
+    <div class="switch">
+        <input type="checkbox" id="toggleBtn">
+        <label for=""></label>
+    </div>
+    <h1 id="header">HANGMAN</h1>
+    <p>Find the hidden word and save hangman's life.</p>
+    <div class="gameContainer">
+        <div class="svgContainer">
+        <svg height="250" width="200" class="figureContainer">
+            <!-- ROD -->
+            <line x1="60" y1="20" x2="140" y2="20" />
+            <line x1="60" y1="20" x2="60" y2="230" />
+            <line x1="30" y1="230" x2="120" y2="230" />
+
+            <!-- Body -->
+            <circle cx="140" cy="65" r="15" class="part"/>
+            <line x1="140" y1="80" x2="140" y2="140" class="part" />
+            <line x1="140" y1="105" x2="110" y2="90" class="part"/>
+            <line x1="140" y1="105" x2="170" y2="90" class="part"/>
+            <line x1="140" y1="140" x2="160" y2="170" class="part"/>
+            <line x1="140" y1="140" x2="120" y2="170" class="part"/>
+
+            <!-- Last part = line on ROD -->
+            <line x1="140" y1="20" x2="140" y2="50" class="part"/>
+        </svg>
+        </div>
+
+        <div class="word" id="word">
+            <div class="letter">b</div>
+            <div class="letter">u</div>
+            <div class="letter">b</div>
+            <div class="letter">a</div>
+        </div>
+        
+
+        <div id="keyboard">
+            <div class="row one">
+                <div class="kletter" id="keyboardBtn"> q </div>
+                <div class="kletter" id="keyboardBtn"> w </div>
+                <div class="kletter" id="keyboardBtn"> e </div>
+                <div class="kletter" id="keyboardBtn"> r </div>
+                <div class="kletter" id="keyboardBtn"> t </div>
+                <div class="kletter" id="keyboardBtn"> y </div>
+                <div class="kletter" id="keyboardBtn"> u </div>
+                <div class="kletter" id="keyboardBtn"> i </div>
+                <div class="kletter" id="keyboardBtn"> o </div>
+                <div class="kletter" id="keyboardBtn"> p </div>
+            </div> 
+            <div class="row fake"></div>
+            <div class="row">
+                <div class="kletter" id="keyboardBtn"> a </div>
+                <div class="kletter" id="keyboardBtn"> s </div>
+                <div class="kletter" id="keyboardBtn"> d </div>
+                <div class="kletter" id="keyboardBtn"> f </div>
+                <div class="kletter" id="keyboardBtn"> g </div>
+                <div class="kletter" id="keyboardBtn"> h </div>
+                <div class="kletter" id="keyboardBtn"> j </div>
+                <div class="kletter" id="keyboardBtn"> k </div>
+                <div class="kletter" id="keyboardBtn"> l </div>
+            </div> 
+            <div class="row"> 
+                <div class="kletter" id="keyboardBtn"> z </div>
+                <div class="kletter" id="keyboardBtn"> x </div>
+                <div class="kletter" id="keyboardBtn"> c </div>
+                <div class="kletter" id="keyboardBtn"> v </div>
+                <div class="kletter" id="keyboardBtn"> b </div>
+                <div class="kletter" id="keyboardBtn"> n </div>
+                <div class="kletter" id="keyboardBtn"> m </div>
+                <div class="kletter polishButton" id="polishButton"><i class="fas fa-sort-down"></i></div>
+            </div> 
+            
+            <div class="row hidden" id="polishCharacters">
+                <div class="kletter" id="keyboardBtn"> ą </div>
+                <div class="kletter" id="keyboardBtn"> ę </div>
+                <div class="kletter" id="keyboardBtn"> ś </div>
+                <div class="kletter" id="keyboardBtn"> ć </div>
+                <div class="kletter" id="keyboardBtn"> ó </div>
+                <div class="kletter" id="keyboardBtn"> ń </div>
+                <div class="kletter" id="keyboardBtn"> ż </div>
+                <div class="kletter" id="keyboardBtn"> ź </div>
+                <div class="kletter" id="keyboardBtn"> ł </div>
+            </div>
+        </div>
+    </div>
+
+
+     <div class="popupContainer" id="popupContainer">
+         <div class="popup">
+             <h2 id="finalMessage1">Congratulations!</h2>
+             <p id="finalMessage2">Hangman is alive</p>
+             <button id="playAgain">Play Again</button>
+         </div>
+     </div>
+
+     <div class="notification" id="notification">
+         <p class="p">You have already entered this letter</p>
+     </div>
+<div class="decoration2"></div>
+
+     <script type="module" src="polish.js"></script>
+     <script type="module" src="english.js"></script>
+     <script type="module" src="script.js"></script>
+</body>
+</html>
