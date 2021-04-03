@@ -190,6 +190,10 @@ switchBtn.addEventListener('change', () => {
     selectedWord = words[Math.floor(Math.random() * words.length)];
     displayWord();
     wrongLetter();
+    
+    keyboardBtn.forEach((btn) => {
+        btn.classList.remove('wrongLetter', 'correctLetter');
+    })
 });
 
 polishButton.addEventListener('click', () => {
